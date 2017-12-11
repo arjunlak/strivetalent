@@ -9,7 +9,20 @@ app.use(bodyParser.urlencoded({extended:true}));
 // parse application/json
 app.use(bodyParser.json());
 
-/*var connectionString = "mongodb://127.0.0.1/shilpa";
+var connectionString = "mongodb://heroku_7m34wm28:sec3jmgvdcqu66jvttoqglsorg@ds249325.mlab.com:49325/heroku_7m34wm28";
+
+//var connectionString = "mongodb://127.0.0.1/shilpa";
+mongoose.connect(connectionString);
+var UserSchema = new mongoose.Schema({
+	fname : String,
+    	lname : String,
+    	email:String
+},{collection : 'articleList'});
+var userRes = mongoose.model('ArticleList',UserSchema);
+/*
+var connectionString = "mongodb://heroku_7m34wm28:sec3jmgvdcqu66jvttoqglsorg@ds249325.mlab.com:49325/heroku_7m34wm28";
+
+var connectionString = "mongodb://127.0.0.1/shilpa";
 mongoose.connect(connectionString);
 
 var shilpaClass = new mongoose.Schema({
@@ -24,6 +37,18 @@ app.get("/getShilpa", function (req,res){
     });
 });
 */
+
+app.post("/saveUser", function (req,res){
+console.log(req.body);
+	var newData = new userRes({
+	    fname : req.body.newObj[0].fname,
+	    lname : req.body.newObj[0].lname,
+	    email : req.body.newObj[0].email,
+
+	});
+	newData.save();
+});
+
 var port = Number(process.env.PORT || 3009);
 var ip = '127.0.0.1';
 

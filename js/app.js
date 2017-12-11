@@ -6,7 +6,20 @@ app.controller("control",function($scope,$http){
                             alert("Please agree before submitting!");
                             return false;
                         } else{
-                            $('#verifyInfo').submit();
+                            //$('#verifyInfo').submit();
+                            alert($scope.fname);
+                            var newObj = [{
+                                fname : $scope.fname,
+                                lname :  $scope.lname,
+                                email : $scope.email
+                            }];
+
+
+
+                            $http.post('/saveUser',{newObj}).success(function(res){
+                               var result = res;
+                               console.log(res);
+                           });
                             return true;
                         }
 
