@@ -6,26 +6,19 @@
     <title> arjun-cse5335 </title>
 </head>
 <body ng-app="arjun" ng-controller="control">
-<!-- Wrapper-->
-<div id="wrapper">
-    <!-- Change permission when establish a number for this-->
-    <!--<header-component></header-component>
-       <navigation-component></navigation-component>-->
-    <!-- Page wraper -->
-    <!--<div id="page-wrapper" class="gray-bg">-->
-    <!-- Main view  -->
-    <div class="wrapper wrapper-content  animated fadeInRight owner-profile">
+<div >
+    <div >
         <div class="row">
             <div class="col-xs-12 col-lg-8">
-                <div class="ibox">
-                    <div class="ibox-content">
+                <div >
+                    <div >
                         <h3>Questions</h3>
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 col-lg-8">
-                <div class="ibox ">
-                    <div class="ibox-content">
+                <div >
+                    <div >
 
                         <form novalidate autocomplete="off" name="form" ng-submit="next(form)">
                             <table>
@@ -37,7 +30,7 @@
                                 <tr>
                                     <td>
                                         <div ng-repeat="k in selected_answer">
-                                            <input type="radio" ng-model="k.selected" ng-value="true" ng-change="$ctr.processRadio(k, selected_monthly_repeat_option)" />{{k.name}}
+                                            <input type="checkbox" ng-model="k.selected" ng-value="true" ng-change="$ctr.processRadio(k, selected_monthly_repeat_option)" />{{k.name}}
                                         </div>
                                     </td>
                                 </tr>

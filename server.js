@@ -11,7 +11,6 @@ app.use(bodyParser.json());
 
 var connectionString = "mongodb://heroku_7m34wm28:sec3jmgvdcqu66jvttoqglsorg@ds249325.mlab.com:49325/heroku_7m34wm28";
 
-//var connectionString = "mongodb://127.0.0.1/shilpa";
 mongoose.connect(connectionString);
 var UserSchema = new mongoose.Schema({
 	fname : String,
@@ -20,19 +19,6 @@ var UserSchema = new mongoose.Schema({
 },{collection : 'articleList'});
 var userRes = mongoose.model('ArticleList',UserSchema);
 
-/*
-
-// Index Route
-app.get('/', (req, res) => {
-  res.send('Invalid Endpoint');
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
-});
-
-
-*/
 
 
 
