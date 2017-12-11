@@ -27,7 +27,7 @@
                 <div class="ibox ">
                     <div class="ibox-content">
 
-                        <form novalidate autocomplete="off" name="from" ng-submit="next(from)">
+                        <form novalidate autocomplete="off" name="form" ng-submit="next(form)">
                             <table>
                                 <tr>
                                     <td>
@@ -36,7 +36,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div ng-repeat="k in selected_monthly_repeat_option">
+                                        <div ng-repeat="k in selected_answer">
                                             <input type="radio" ng-model="k.selected" ng-value="true" ng-change="$ctr.processRadio(k, selected_monthly_repeat_option)" />{{k.name}}
                                         </div>
                                     </td>

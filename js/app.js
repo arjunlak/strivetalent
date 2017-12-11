@@ -1,13 +1,23 @@
 var app = angular.module('arjun', []);
 
 app.controller("control",function($scope,$http){
-            $scope.selected_monthly_repeat_option = [{
-                name: 'Date of the month',
+            $scope.selected_answer = [{
+                name: 'I dont know',
                 selected: true
             }, {
-                name: 'Day of the month',
+                name: 'Because the sea is',
                 selected: false
             }];
+
+            $scope.next = function(){
+                //if (!form.$valid) return;
+                angular.forEach($scope.selected_answer, function(value, key) {
+                                        if (value.selected) {
+                                            console.log($scope.selected_answer[key].name);
+                                        }
+                                    });
+            }
+
 
 
             $scope.checkChecked = function(){
