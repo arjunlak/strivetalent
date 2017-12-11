@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js">
+    </script>
+    <title> arjun-cse5335 </title>
+</head>
+<body ng-app="arjun" ng-controller="control">
+<!-- Wrapper-->
+<div id="wrapper">
+    <!-- Change permission when establish a number for this-->
+    <!--<header-component></header-component>
+       <navigation-component></navigation-component>-->
+    <!-- Page wraper -->
+    <!--<div id="page-wrapper" class="gray-bg">-->
+    <!-- Main view  -->
+    <div class="wrapper wrapper-content  animated fadeInRight owner-profile">
+        <div class="row">
+            <div class="col-xs-12 col-lg-8">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <h3>Questions</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-8">
+                <div class="ibox ">
+                    <div class="ibox-content">
+
+                        <form novalidate autocomplete="off" name="from" ng-submit="next(from)">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>1. Why is the sky blue?</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div ng-repeat="k in selected_monthly_repeat_option">
+                                            <input type="radio" ng-model="k.selected" ng-value="true" ng-change="$ctr.processRadio(k, selected_monthly_repeat_option)" />{{k.name}}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <button scroll-top type="submit"
+                                    class="btn btn-primary block m-b float-right">Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="js/app.js">
+</script>
+
+</html>
